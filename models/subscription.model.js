@@ -25,6 +25,10 @@ const Subscription = sequelize.define(
             type: DataTypes.DATE,
             allowNull: false
         },
+        sponsor: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }
 )
 
