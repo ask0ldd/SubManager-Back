@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize")
 const sequelize = require('../config/database')
 
-const User = sequelize.define(
+const Member = sequelize.define(
     "Member", {
         id: {
             type: DataTypes.INTEGER,
@@ -53,6 +53,30 @@ const User = sequelize.define(
     },
 )
 
+const EmergencyContact = sequelize.define(
+    "EmergencyContact", {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            unique: true
+        },
+        mobile: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        firstname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        lastname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    },
+)
+
 // User.sync()
 
 /*
@@ -72,4 +96,4 @@ const User = sequelize.define(
     emergencyContactMobile : '665544332211',
 */
 
-module.exports = Member
+module.exports = {Member, EmergencyContact}
