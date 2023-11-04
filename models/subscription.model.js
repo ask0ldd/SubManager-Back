@@ -10,7 +10,7 @@ const Subscription = sequelize.define(
             unique: true
         },
         activity: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         fees: {
@@ -28,10 +28,25 @@ const Subscription = sequelize.define(
     }
 )
 
+const Activity = sequelize.define(
+    "Activity", {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            unique: true
+        },
+        activity: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    }
+)
+
 // sponsor
 // activity
 
-module.exports = Subscription
+module.exports = {Subscription, Activity}
 
 /*
     activity : 'golf',
