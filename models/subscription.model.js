@@ -9,7 +9,7 @@ const Subscription = sequelize.define(
             autoIncrement: true,
             unique: true
         },
-        activity: {
+        activityId: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },

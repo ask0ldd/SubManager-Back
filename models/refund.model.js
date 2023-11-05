@@ -10,8 +10,8 @@ const Refund = sequelize.define(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        paymentMethod: {
-            type: DataTypes.STRING,
+        paymentMethodId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         authorizedBy: {
@@ -29,4 +29,19 @@ const Refund = sequelize.define(
     }
 )
 
-module.exports = Refund
+const PaymentMethod = sequelize.define(
+    "PaymentMethod", {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            unique: true
+        },
+        paymentMethod: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    }
+)
+
+module.exports = {Refund, PaymentMethod}

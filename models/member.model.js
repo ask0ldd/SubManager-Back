@@ -50,6 +50,10 @@ const Member = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        emergencyContactId : {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        }
     },
 )
 
