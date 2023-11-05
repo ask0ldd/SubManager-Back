@@ -1,5 +1,5 @@
-const Activity = sequelize.define(
-    "Activity", {
+const RIB = sequelize.define(
+    "RIB", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -24,3 +24,5 @@ const Activity = sequelize.define(
         },
     }
 )
+
+module.exports = RIB
